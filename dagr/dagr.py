@@ -186,6 +186,9 @@ class Dagr:
             if filesearch:
                 filelink = filesearch['src']
 
+        if current_page.find("span",{"itemprop": "title"}).text == "Literature":
+            raise DagrException("not an image")
+
         if not filelink:
             if mature_error:
                 if self.mature:
